@@ -21,6 +21,7 @@ apply plugin: 'maven-publish'
 def includeJar = false
 def includeDoc = false
 def includeSrc = false
+//def pomLibGroupName = 'com.github.li_yu_jiang'
 def pomLibGroupName = 'com.github.moyihen'
 def pomLibArtifactId = project.name
 def pomLibVersion = getGitLatestTag()
@@ -107,7 +108,7 @@ afterEvaluate {
                     def root = asNode()
                     root.appendNode('name', pomLibArtifactId)
                     root.appendNode('description', pomLibDescription)
-                    root.appendNode('url', pomSiteUrl)
+                    //root.appendNode('url', pomSiteUrl)
                     root.appendNode('licenses').appendNode('license').appendNode('name', pomLicenses[0])
                     def developer = root.appendNode('developers').appendNode('developer')
                     developer.appendNode('id', pomDeveloperId)
