@@ -26,7 +26,8 @@ def pomLibGroupName = 'com.github.moyihen'
 def pomLibArtifactId = project.name
 def pomLibVersion = getGitLatestTag()
 def pomLibDescription = "TODO description: ${rootProject.name} for Android"
-def pomSiteUrl = "https://gitee.com/li_yu_jiang/${rootProject.name}"
+//def pomSiteUrl = "https://gitee.com/li_yu_jiang/${rootProject.name}"
+def pomSiteUrl = "https://github.com/moyihen/${rootProject.name}"
 def pomLicenses = ["Apache License 2.0", "Mulan PSL v2"]
 //开发者信息
 def pomDeveloperId = 'liyujiang-gzu'
@@ -108,7 +109,7 @@ afterEvaluate {
                     def root = asNode()
                     root.appendNode('name', pomLibArtifactId)
                     root.appendNode('description', pomLibDescription)
-                    //root.appendNode('url', pomSiteUrl)
+                    root.appendNode('url', pomSiteUrl)
                     root.appendNode('licenses').appendNode('license').appendNode('name', pomLicenses[0])
                     def developer = root.appendNode('developers').appendNode('developer')
                     developer.appendNode('id', pomDeveloperId)
