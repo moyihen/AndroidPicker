@@ -13,8 +13,10 @@
 
 package com.github.gzuliyujiang.fallback.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +28,10 @@ import com.github.gzuliyujiang.calendarpicker.OnSingleDatePickListener;
 import com.github.gzuliyujiang.calendarpicker.core.CalendarView;
 import com.github.gzuliyujiang.calendarpicker.core.ColorScheme;
 import com.github.gzuliyujiang.calendarpicker.core.DateUtils;
+import com.github.gzuliyujiang.calendarpicker.core.DayView;
 import com.github.gzuliyujiang.calendarpicker.core.FestivalProvider;
+import com.github.gzuliyujiang.calendarpicker.core.ItemViewProvider;
+import com.github.gzuliyujiang.calendarpicker.core.MonthView;
 import com.github.gzuliyujiang.fallback.R;
 
 import java.text.DateFormat;
@@ -129,7 +134,11 @@ public class CalendarPickerActivity extends BackAbleActivity {
     }
 
     public void onCalendarDateSingle(View view) {
+        DayView.setTvDaySize(30);
+        DayView.setTvDescSize(40);
         CalendarPicker picker = new CalendarPicker(this);
+        picker.getOkView().setTextSize(40);
+
         picker.setRangeDateOnFuture(3);
         if (singleTimeInMillis == 0) {
             singleTimeInMillis = System.currentTimeMillis();

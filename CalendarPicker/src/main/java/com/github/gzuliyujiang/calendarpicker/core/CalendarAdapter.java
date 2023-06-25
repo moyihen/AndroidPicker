@@ -207,6 +207,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.VH> im
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         TextView titleView = itemViewProvider == null ? null : itemViewProvider.provideTitleView(context);
+        //
         if (titleView == null) {
             titleView = new TextView(context);
             titleView.setGravity(Gravity.CENTER);

@@ -31,10 +31,27 @@ import androidx.core.graphics.ColorUtils;
  * Created by peng on 2017/8/2.
  */
 public final class DayView extends LinearLayout {
+    private static float TvDaySize = 15f;
+    private static float TvDescSize = 12f;
     private TextView tvDesc;
     private TextView tvDay;
     private DayEntity entity;
 
+    /**
+     * 设置日期 text size .
+     * @param tvDaySize .
+     */
+    public static void setTvDaySize(float tvDaySize){
+       TvDaySize = tvDaySize;
+    }
+
+    /**
+     * 设置描述 text size
+     * @param tvDescSize .
+     */
+    public static void setTvDescSize(float tvDescSize){
+        TvDescSize = tvDescSize;
+    }
     public DayView(@NonNull Context context) {
         super(context);
         initialize(context);
@@ -65,13 +82,13 @@ public final class DayView extends LinearLayout {
         setPadding(0, padding, 0, padding);
         tvDay = new TextView(context);
         tvDay.setGravity(Gravity.CENTER);
-        tvDay.setTextSize(15);
+        tvDay.setTextSize(TvDaySize);
         addView(tvDay, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         tvDesc = new TextView(context);
         tvDesc.setGravity(Gravity.CENTER);
-        tvDesc.setTextSize(12);
+        tvDesc.setTextSize(TvDescSize);
         addView(tvDesc, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));

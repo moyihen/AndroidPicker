@@ -1,4 +1,6 @@
-﻿# M
+﻿# CalendarPicker 
+- setTvDaySize(float f); 修改日历字体大小
+- setTvDescSize(float f);修改日历描述字体大小
 
 # AndroidPicker
 
