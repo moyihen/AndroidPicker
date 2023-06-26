@@ -21,13 +21,13 @@ apply plugin: 'maven-publish'
 def includeJar = false
 def includeDoc = false
 def includeSrc = false
-//def pomLibGroupName = 'com.github.gzuliyujiang'
-def pomLibGroupName = 'com.github.moyihen'
+def pomLibGroupName = 'com.github.gzuliyujiang'
+//def pomLibGroupName = 'com.github.moyihen'
 def pomLibArtifactId = project.name
 def pomLibVersion = getGitLatestTag()
 def pomLibDescription = "TODO description: ${rootProject.name} for Android"
-//def pomSiteUrl = "https://gitee.com/li_yu_jiang/${rootProject.name}"
-def pomSiteUrl = "https://github.com/moyihen/${rootProject.name}"
+def pomSiteUrl = "https://gitee.com/li_yu_jiang/${rootProject.name}"
+//def pomSiteUrl = "https://github.com/moyihen/${rootProject.name}"
 def pomLicenses = ["Apache License 2.0", "Mulan PSL v2"]
 //开发者信息
 def pomDeveloperId = 'liyujiang-gzu'
@@ -77,19 +77,11 @@ afterEvaluate {
     //发布jar或aar包
     publishing {
         repositories {
-           /* maven {
+            maven {
                 // 执行命令`gradlew publishReleasePublicationToLocalRepository`
                 name = 'Local'
                 // 可同步到`https://gitee.com/li_yu_jiang/maven-repo`，通过`https://gitee.com/li_yu_jiang/maven-repo/raw/master`访问
                 url = rootProject.file("归档")
-            }*/
-            // 下面这部分，不是很清楚加不加，但是最后加上
-            maven {
-                // change URLs to point to your repos, e.g. http://my.org/repo
-                def baseUrl = buildDir.getParent()
-                def releasesRepoUrl = "$baseUrl/repos/releases"
-                def snapshotsRepoUrl = "$baseUrl/repos/snapshots"
-                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             }
         }
         publications {
