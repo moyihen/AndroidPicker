@@ -82,13 +82,17 @@ public final class DayView extends LinearLayout {
         setPadding(0, padding, 0, padding);
         tvDay = new TextView(context);
         tvDay.setGravity(Gravity.CENTER);
-        tvDay.setTextSize(TvDaySize);
+        //tvDay.setTextSize(TvDaySize);
+        tvDay.setTextSize(TvDaySize * getResources().getDisplayMetrics().scaledDensity);
+
         addView(tvDay, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         tvDesc = new TextView(context);
         tvDesc.setGravity(Gravity.CENTER);
-        tvDesc.setTextSize(TvDescSize);
+
+        //tvDesc.setTextSize(TvDescSize);
+        tvDesc.setTextSize(TvDescSize * getResources().getDisplayMetrics().scaledDensity);
         addView(tvDesc, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));

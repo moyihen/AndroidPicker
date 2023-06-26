@@ -137,8 +137,6 @@ public class CalendarPickerActivity extends BackAbleActivity {
         DayView.setTvDaySize(30);
         DayView.setTvDescSize(40);
         CalendarPicker picker = new CalendarPicker(this);
-        picker.getOkView().setTextSize(40);
-
         picker.setRangeDateOnFuture(3);
         if (singleTimeInMillis == 0) {
             singleTimeInMillis = System.currentTimeMillis();
