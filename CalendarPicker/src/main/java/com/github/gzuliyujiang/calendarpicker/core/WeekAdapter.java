@@ -40,6 +40,17 @@ public class WeekAdapter extends BaseAdapter {
         }
     }
 
+    private static float weekStrSize = 15;
+
+    /**
+     * week 字体大小
+     *
+     * @param strSie .
+     */
+    public static void setWeekStrSie(float strSie) {
+        weekStrSize = strSie;
+    }
+
     public void setColorScheme(ColorScheme colorScheme) {
         if (colorScheme == null) {
             colorScheme = new ColorScheme();
@@ -67,7 +78,7 @@ public class WeekAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = new TextView(parent.getContext());
         textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(15);
+        textView.setTextSize(weekStrSize);
         textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         int padding = (int) (parent.getResources().getDisplayMetrics().density * 10);
         textView.setPadding(0, padding, 0, padding);

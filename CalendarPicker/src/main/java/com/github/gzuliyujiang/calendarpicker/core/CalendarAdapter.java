@@ -55,6 +55,18 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.VH> im
         }
     }
 
+    private static float titleSize = 14;
+
+    /**
+     * 设置月份标题字体大小.
+     *
+     * @param size .
+     */
+    public static void setTitleSize(float size) {
+
+        titleSize = size;
+    }
+
     public CalendarAdapter notify(boolean notify) {
         this.notify = notify;
         return this;
@@ -211,7 +223,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.VH> im
         if (titleView == null) {
             titleView = new TextView(context);
             titleView.setGravity(Gravity.CENTER);
-            titleView.setTextSize(14);
+            titleView.setTextSize(titleSize);
             titleView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
             int padding = (int) (parent.getResources().getDisplayMetrics().density * 10);
             titleView.setPadding(padding, padding, padding, padding);

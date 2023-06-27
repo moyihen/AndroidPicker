@@ -25,6 +25,7 @@ import androidx.annotation.Nullable;
 import com.github.gzuliyujiang.calendarpicker.CalendarPicker;
 import com.github.gzuliyujiang.calendarpicker.OnRangeDatePickListener;
 import com.github.gzuliyujiang.calendarpicker.OnSingleDatePickListener;
+import com.github.gzuliyujiang.calendarpicker.core.CalendarAdapter;
 import com.github.gzuliyujiang.calendarpicker.core.CalendarView;
 import com.github.gzuliyujiang.calendarpicker.core.ColorScheme;
 import com.github.gzuliyujiang.calendarpicker.core.DateUtils;
@@ -32,6 +33,7 @@ import com.github.gzuliyujiang.calendarpicker.core.DayView;
 import com.github.gzuliyujiang.calendarpicker.core.FestivalProvider;
 import com.github.gzuliyujiang.calendarpicker.core.ItemViewProvider;
 import com.github.gzuliyujiang.calendarpicker.core.MonthView;
+import com.github.gzuliyujiang.calendarpicker.core.WeekAdapter;
 import com.github.gzuliyujiang.fallback.R;
 
 import java.text.DateFormat;
@@ -134,9 +136,17 @@ public class CalendarPickerActivity extends BackAbleActivity {
     }
 
     public void onCalendarDateSingle(View view) {
-        DayView.setTvDaySize(30);
+        //日期
+        /*DayView.setTvDaySize(30);
+        //日期描述
         DayView.setTvDescSize(40);
+        //月份标题
+        CalendarAdapter.setTitleSize(40);
+        //week字体
+        WeekAdapter.setWeekStrSie(40);*/
+
         CalendarPicker picker = new CalendarPicker(this);
+
         picker.setRangeDateOnFuture(3);
         if (singleTimeInMillis == 0) {
             singleTimeInMillis = System.currentTimeMillis();
